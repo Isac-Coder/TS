@@ -1,0 +1,67 @@
+Ejercicio 1: Tipos Primitivos
+Tarea: Declara las siguientes variables utilizando anotaciones de tipo explícitas:
+- Una variable nombre que sea una cadena de texto.
+- Una variable edad que sea un número.
+- Una variable estaInscrito que sea un valor booleano.
+
+Solución esperada:
+let nombre: string = "Juan";
+let edad: number = 25;
+let estaInscrito: boolean = true;
+
+
+Ejercicio 2: Arrays y Tuplas
+Tarea: Crea las siguientes estructuras utilizando el tipado correcto:
+- Un array llamado habilidades que solo contenga cadenas de texto.
+- Una tupla llamada coordenadas que contenga exactamente dos números (latitud y longitud).
+
+Solución esperada:
+let habilidades: string[] = ["JavaScript", "TypeScript", "React"];
+let coordenadas: [number, number] = [40.7128, -74.0060];
+
+
+Ejercicio 3: Objetos e Interfaces
+Tarea: Define una interfaz llamada Producto que describa un objeto con las siguientes propiedades:
+- id: un número.
+- nombre: una cadena.
+- precio: un número.
+- disponible: un booleano (opcional).
+Luego, crea una variable miProducto que use esa interfaz.
+
+Solución esperada:
+interface Producto {
+    id: number;
+    nombre: string;
+    precio: number;
+    disponible?: boolean; // El signo '?' indica que es opcional
+}
+
+const miProducto: Producto = {
+    id: 1,
+    nombre: "Teclado Mecánico",
+    precio: 75.99
+};
+
+
+Ejercicio 4: Tipos de Unión
+Tarea: En muchas aplicaciones, un identificador puede ser tanto un número como una cadena.
+- Declara un alias de tipo (type alias) llamado ID que pueda ser string o number.
+- Crea una variable usuarioId y asígnale un valor.
+
+Solución esperada:
+type ID = string | number;
+
+let usuarioId: ID = 101;
+usuarioId = "USR-202"; // Ambos valores son válidos
+
+
+Ejercicio 5: Inferencia de Tipos
+Tarea: TypeScript a menudo puede inferir el tipo sin que lo escribas explícitamente.
+- Declara una variable puntuacion e inicialízala con el número 10 sin poner : number.
+- Intenta asignarle el texto "Diez" en la siguiente línea y observa qué error te daría el editor.
+
+Solución esperada:
+let puntuacion = 10;
+// puntuacion = "Diez"; // Error de TypeScript: Type 'string' is not assignable to type 'number'.
+
+Explicación: TypeScript detectará que puntuacion debe ser un número basándose en su valor inicial y generará un error de tipo si intentas cambiarlo a una cadena.
