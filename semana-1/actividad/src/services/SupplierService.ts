@@ -1,7 +1,6 @@
 import type { Supplier } from "../models/supplier";
 import type { SupplierId } from "../types/ids.types";
 
-// GestiÃ³n simple de proveedores.
 export class SupplierService {
   private suppliers: Supplier[] = [];
 

@@ -1,4 +1,4 @@
-import { ProductService } from "./services/productService";
+import { ProductService } from "./services/ProductService";
 import { SupplierService } from "./services/SupplierService";
 import { InventoryManager } from "./services/InventoryManager";
 import { mockProducts, mockSuppliers } from "./data/mockData";

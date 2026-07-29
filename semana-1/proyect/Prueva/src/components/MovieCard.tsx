@@ -13,7 +13,6 @@ function MovieCard({ id, titulo, anio, genero, director, duracion,puntuacion,ima
         <p>{puntuacion}</p>
         <p>{imagen}</p>
         <p>{descripcion}</p>
-       
       </div>
     </article>
   );

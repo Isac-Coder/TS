@@ -1,6 +1,6 @@
 import type { Product } from "../models/product";
 import type { ProductId } from "../types/ids.types";
-import { isValidPrice, isValidQuantity } from "../utils/validator";
+import { isValidPrice, isValidQuantity } from "../utils/validators";
 
 export class ProductService {
   private products: Product[] = [];
