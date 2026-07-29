@@ -1,0 +1,37 @@
+:root {
+  font-family: system-ui, sans-serif;
+  --color-primary: #1f2937;
+  --color-alert: #b91c1c;
+  --color-alert-bg: #fee2e2;
+}
+
+body {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: var(--color-primary);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#alerts {
+  background: var(--color-alert-bg);
+  color: var(--color-alert);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#alerts:empty {
+  display: none;
+}
