@@ -1,8 +1,20 @@
+type Genero = 
+"Drama"
+| "Crimen"
+| "Acción"
+| "Ciencia ficción"
+| "Suspenso"
+| "Acción"
+| "Animación"
+| "Aventura"
+| "Comedia dramática"
+| string
+
 export interface Movie {
   readonly id: number;
   titulo: string;
   anio: number;
-  genero: string;
+  genero: Genero;
   director: string;
   duracion: number;
   puntuacion: number;
