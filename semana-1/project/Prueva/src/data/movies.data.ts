@@ -1,8 +1,6 @@
-import type { IMovie } from "../interfaces/movies.interface";
+import type { Movie } from "../interfaces/movies.interface";
 
-
-
-export const movies : IMovie[] = [
+export const movies : Movie[] = [
   {
     id: 1,
     titulo: "The Shawshank Redemption",

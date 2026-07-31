@@ -1,10 +1,10 @@
 import { Link } from "react-router";
-import type { IMovie } from "../interfaces/movies.interface";
+import type { Movie } from "../interfaces/movies.interface";
 
 
 
-interface IProps{
-    movie: IMovie;
+export interface IProps{
+    movie: Movie;
 }
 
 

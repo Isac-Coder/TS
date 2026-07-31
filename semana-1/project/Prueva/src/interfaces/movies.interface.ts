@@ -12,7 +12,7 @@ export type Genero =
 
 export type anio = string | number
 
-export interface IMovie{
+export interface Movie{
     id: number;
     titulo: string;
     anio: anio;
@@ -25,5 +25,5 @@ export interface IMovie{
 }
 
 export interface IProps{
-    movie: IMovie;
+    movie: Movie;
 }

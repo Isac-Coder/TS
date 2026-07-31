@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { HomePage } from "./Pages/HomePage";
 import { MovieDetailsPage } from "./Pages/MovieDetailsPage";
 import { AuthLayout } from "./layouts/AuthLayout";
+import { LoginPage } from "./Pages/LoginPage";
 
 export const movieRouter = createBrowserRouter([
 //    {
@@ -21,15 +22,13 @@ export const movieRouter = createBrowserRouter([
             },{
                 path: "movies",
                 element: <h1 className="text-4xl">Aqui hay peliculas</h1> 
-            }
-        ]
-    },{
-        path: "/auth",
-        element: <h1>Aqui se renderizan las rutas de autentication</h1>,
-        children: [
-            {
-                
-            }
+            },{
+                path: "/auth",
+                element: <LoginPage/>
+            },{
+                path: "movies/:id",
+                element: <MovieDetailsPage />
+              }
         ]
     }
 ])
