@@ -1,13 +1,35 @@
 import { createBrowserRouter } from "react-router";
-import Home from "./Pages/HomePage";
-import { MovieDetails } from "./Pages/MovieDetails";
-// import { createBrotliCompress } from "zlib";
+import { HomePage } from "./Pages/HomePage";
+import { MovieDetailsPage } from "./Pages/MovieDetailsPage";
+import { AuthLayout } from "./layouts/AuthLayout";
 
-export const appRouter = createBrowserRouter([{
-    path: "/",
-    element: <Home />
-},
-{
-    path: "movies/:id",
-    element: <MovieDetails />
-}])
+export const movieRouter = createBrowserRouter([
+//    {
+//        path: "/",
+//        element: <HomePage/>
+//    },{
+//        path: "movies/:id",
+//        element: <MovieDetailsPage />
+//    }
+    {
+        path: "/",
+        element: <AuthLayout/>,
+        children: [
+            {
+                index: true,
+                element: <HomePage />
+            },{
+                path: "movies",
+                element: <h1 className="text-4xl">Aqui hay peliculas</h1> 
+            }
+        ]
+    },{
+        path: "/auth",
+        element: <h1>Aqui se renderizan las rutas de autentication</h1>,
+        children: [
+            {
+                
+            }
+        ]
+    }
+])

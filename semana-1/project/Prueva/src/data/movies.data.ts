@@ -1,29 +1,8 @@
-type Genero = 
-"Drama"
-| "Crimen"
-| "Acción"
-| "Ciencia ficción"
-| "Suspenso"
-| "Acción"
-| "Animación"
-| "Aventura"
-| "Comedia dramática"
-| string
-
-export interface Movie {
-  readonly id: number;
-  titulo: string;
-  anio: number;
-  genero: Genero;
-  director: string;
-  duracion: number;
-  puntuacion: number;
-  imagen: string;
-  descripcion: string;
-}
+import type { IMovie } from "../interfaces/movies.interface";
 
 
-export const movies : Movie[] = [
+
+export const movies : IMovie[] = [
   {
     id: 1,
     titulo: "The Shawshank Redemption",
