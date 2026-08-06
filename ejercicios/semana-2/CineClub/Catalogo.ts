@@ -58,7 +58,41 @@ class Pelicula {
         }
     }
 
+    buscarPelicula(titulo: string){
+        if (this.Título == titulo){
+            console.log("Película encontrada:");
+            console.log(this.Título);
+        }else if(titulo != this.Título){
+            console.log("Película no encontrada");
+            
+        }
+    }
+
+    buscarPorGenero(genero: string){
+        if (this.Genero == genero){
+            console.log(this.Título);
+        }else{
+            console.log(`No se encontro el genero: ${genero}`);
+            
+        }
+    }
+
 }
+
+class ContenidoAudiovisual {
+            
+            titulo: string ;
+            anio: number ;
+            duracion: number ;
+            calificacion: number ;
+
+            constructor(titulo: string, anio: number, duracion: number, calificacion: number) {
+                this.titulo = titulo
+                this.anio = anio
+                this.duracion = duracion
+                this.calificacion = calificacion
+            }
+        }
 
 const pelicula1 = new Pelicula("Interstellar","2014","Ciencia ficción",169,"Christopher Nolan",9);
 
@@ -82,6 +116,10 @@ peliculas.map( (item) => {
     item.mostrarInformacion()
     console.log("-------------------------------");
     item.esRecomendada()
+    console.log("-------------------------------");
+    item.buscarPelicula("Inter")
+    console.log("-------------------------------");
+    item.buscarPorGenero("Ciencia")
 }
 )
 
