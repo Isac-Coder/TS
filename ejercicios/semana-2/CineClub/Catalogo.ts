@@ -31,6 +31,12 @@ class Documental extends ContenidoAudiovisual {
         this.tema = tema;
         this.narrador = narrador
     }
+
+    mostrarInformacion() {
+        super.mostrarInformacion()
+        console.log(`Tema ${this.tema}`);
+        console.log(`Narrador ${this.narrador}`);
+    }
 }
 
 class Pelicula extends ContenidoAudiovisual{
@@ -48,14 +54,9 @@ class Pelicula extends ContenidoAudiovisual{
     }
 
     mostrarInformacion(){
-        console.log("");
-        console.log("-------------------------------");
-        console.log("");
-        console.log(this.titulo);
-        console.log(`director: ${this.director}`);
-        console.log(`Año: ${this.anio}`);
+        super.mostrarInformacion()
         console.log(`Género: ${this.genero}`);
-        console.log(`⭐: ${this.calificacion}/10`);
+        console.log(`Director: ${this.director}`);
     }
 
     esRecomendada() {
@@ -108,8 +109,73 @@ class Pelicula extends ContenidoAudiovisual{
 
 }
 
+class catalogo{
+    contenidos: ContenidoAudiovisual[];
+
+    constructor(){
+        this.contenidos = [];
+    }
+
+    agregar(contenido: ContenidoAudiovisual){
+        this.contenidos.push(contenido);
+    }
+
+    eliminar(titulo: string){
+        const indice = this.contenidos.findIndex(c => c.titulo === titulo)
+
+        if (indice === -1){
+            console.log(`No se encontro "${titulo}" en el catalogo`);
+            return;
+        }
+
+        this.contenidos.splice(indice, 1)
+        console.log(`${titulo} fue eliminado correctamente`);
+    }
+
+    buscarPorTitulo(titulo: string): ContenidoAudiovisual | undefined{
+        return this.contenidos.find(c => c.titulo.toLowerCase() === titulo.toLowerCase())
+    }
+
+    mostrarTodos(){
+        console.log("");
+        console.log("=== CATALOGO ===");
+        this.contenidos.forEach(contenido => {
+            contenido.mostrarInformacion
+        })
+    }
+
+    mostrarRecomendados(calificacionMinima: number = 8){
+        console.log("");
+        console.log("=== RECOMENDADOS ===");
+        
+        const recomendados = this.contenidos.filter(c => c.calificacion >= calificacionMinima)
+
+        if (recomendados.length === 0){
+            console.log("No hay recomendados");
+            return
+        }
+
+        recomendados.forEach(contenido =>{
+            contenido.mostrarInformacion();
+        })
+    }
+
+    
+}
+
+
 
 const pelicula1 = new Pelicula("Interstellar",2014,"Ciencia ficción",169,"Christopher Nolan",9);
+
+const catalogo1 = new catalogo();
+
+// las funciones no se llaman por alguna razon
+
+catalogo.agredar(pelicula1);
+
+catalogo1.buscarPorTitulo("Interstellar")
+
+catalogo.mostrarTodos();
 
 const pelicula2 = new Pelicula("Interstellar",2014,"Ciencia ficción",169,"Christopher Nolan",6);
 
@@ -135,8 +201,9 @@ peliculas.map( (item) => {
     item.buscarPelicula("Inter")
     console.log("-------------------------------");
     item.buscarPorgenero("Ciencia")
-}
-)
+});
+
+
 
 // pelicula5.mostrarInformacion()
 
