@@ -169,13 +169,14 @@ const pelicula1 = new Pelicula("Interstellar",2014,"Ciencia ficción",169,"Chris
 
 const catalogo1 = new catalogo();
 
-// las funciones no se llaman por alguna razon
 
-catalogo.agredar(pelicula1);
+catalogo1.agregar(pelicula1);
 
 catalogo1.buscarPorTitulo("Interstellar")
 
-catalogo.mostrarTodos();
+catalogo1.mostrarTodos();
+
+catalogo1.mostrarRecomendados();
 
 const pelicula2 = new Pelicula("Interstellar",2014,"Ciencia ficción",169,"Christopher Nolan",6);
 
